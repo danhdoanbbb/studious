@@ -1,0 +1,374 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #ff6e65;
+    --secondary-color: #0d369f;
+    --text-color: #060606;
+}
+
+.content-section h2 span {
+    color: var(--primary-color);
+}
+
+.content-section h2 {
+    position: relative;
+}
+
+.content-section h2::before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background-color: var(--text-color);
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-70%);
+}
+
+.content-section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background-color: var(--text-color);
+    position: absolute;
+    bottom: -14px;
+    left: 50%;
+    transform: translateX(-30%);
+}
+
+html {
+    font-family: 'Roboto', sans-serif;
+    color: #060606;
+}
+
+
+
+/* Header----------------------------------------------------- */
+.header-top {
+    background-color: var(--secondary-color);
+}
+
+.header-top a:hover {
+    color: var(--primary-color) !important;
+}
+
+.header-navbar .header-navbar--logo {
+    font-size: 26px;
+    color: var(--secondary-color);
+}
+
+.header-navbar .header-navbar--logo:hover {
+    color: var(--primary-color);
+}
+
+.header-navbar .header-navbar--menu a {
+    color: var(--text-color) !important;
+}
+
+.header-navbar .header-navbar--menu a:hover {
+    color: var(--primary-color) !important;
+}
+
+.header-navbar--menu .header-navbar--submenu {
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: rgb(12 12 12 / 6%) 0px 1px 20px 0px;
+}
+
+.header-navbar--menu .header-navbar--submenu::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 16px solid #fff;
+    position: absolute;
+    top: -5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.header-navbar .header-navbar--submenu a:hover {
+    color: var(--primary-color) !important;
+    background-color: #fff;
+}
+
+.header-navbar--submenu a {
+    font-weight: bold;
+}
+
+.header-navbar .header-navbar--search {
+    width: 225px;
+}
+
+.header-navbar .header-navbar--search button {
+    color: var(--secondary-color);
+}
+
+.header-navbar .header-navbar--search button:hover {
+    color: var(--primary-color);
+}
+
+.header-navbar .header-navbar--search input:focus,
+.header-navbar .header-navbar--search button:focus {
+    box-shadow: none;
+}
+
+
+
+/* Banner----------------------------------------------------- */
+.banner--button-wrap {
+    margin-bottom: 100px;
+}
+
+.banner--button {
+    width: 12px !important;
+    height: 12px !important;
+    transition: all .5s !important;
+}
+
+.banner--button:hover {
+    background-color: var(--primary-color);
+}
+
+.banner--button.active {
+    background-color: var(--primary-color);
+}
+
+.banner--content--wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.banner--content {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 600px;
+}
+
+.banner--content h2 {
+    font-size: 70px;
+}
+
+.banner--content button:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.sub-banner {
+    position: relative;
+    top: -70px;
+    left: 0;
+    right: 0;
+}
+
+
+
+/* Welcome----------------------------------------------------- */
+.welcome {
+    
+}
+
+.welcome--item i {
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    background: #0d369f17;
+    color: var(--secondary-color);
+}
+
+.welcome--item a:hover {
+    color: var(--primary-color) !important;
+}
+
+
+
+/* Course----------------------------------------------------- */
+.course-item:hover {
+    box-shadow: 0px 15px 30px rgb(29 23 77 / 8%);
+}
+
+.course-item--price {
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    background-color: var(--primary-color);
+    bottom: 0;
+    transform: translateY(20%);
+    right: 5%;
+    box-shadow: 0px 8px 20px rgb(241 77 93 / 20%);
+}
+
+.course-item--header i {
+    color: var(--primary-color);
+}
+
+.course-item--title:hover {
+    color: var(--primary-color) !important;
+}
+
+.course-item--footer {
+    font-size: 14px;
+}
+
+.course-item--link {
+    color: var(--primary-color);
+}
+
+.course-item--link:hover {
+    color: var(--secondary-color);
+}
+
+.course-btn {
+    background-color: var(--primary-color);
+}
+
+.course-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+
+
+/* Service----------------------------------------------------- */
+.service {
+    background: url(../img/service-bg.jpg) center / cover no-repeat;
+}
+
+.service-item i {
+    width: 91px;
+    height: 66px;
+    line-height: 66px;
+    background: #0d369f17;
+    color: var(--secondary-color);
+}
+
+
+
+/* Instructor----------------------------------------------------- */
+.instructor-item:hover .instructor-item--img-info {
+    transform: translateY(0%);
+}
+
+.instructor-item--img-info {
+    background-color: rgba(0, 0, 0, .3);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateY(100%);
+    transition: all .5s;
+}
+
+.instructor-item--img-info a {
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 14px;
+    color: var(--secondary-color);
+}
+
+.instructor-item a:hover {
+    color: var(--primary-color) !important;
+}
+
+
+
+/* Contact----------------------------------------------------- */
+.contact {
+    padding-bottom: 160px;
+}
+
+.contact-btn {
+    background-color: var(--primary-color);
+}
+
+.contact-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+
+
+/* Footer----------------------------------------------------- */
+footer {
+    background-color: #060e1f;
+}
+
+.footer-top {
+    box-shadow: 0px -1px 41px 0px rgb(21 22 23 / 8%);
+    border-radius: 15px;
+    bottom: 0;
+    transform: translateY(-50%);
+}
+
+.footer-top--item button {
+    background-color: var(--secondary-color);
+}
+
+.footer-top--item button:hover {
+    opacity: .9;
+}
+
+.footer-top--item input:focus,
+.footer-top--item button:focus {
+    box-shadow: none;
+    border-color: var(--secondary-color);
+}
+
+.footer-body--item a:hover {
+    color: #fff !important;
+}
+
+.footer-body--item i {
+    font-size: 10px;
+    vertical-align: 1px;
+}
+
+.footer-body--item a,
+.footer-body--item p,
+.footer-body--item span,
+.footer-body--socials i {
+    font-size: 14px;
+}
+
+.footer-body--socials a {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    color: var(--secondary-color);
+}
+
+.footer-body--socials a:hover {
+    color: var(--primary-color) !important;
+}
+
+
+
+/* Back to Top */
+.btn-top {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background-color: var(--secondary-color);
+    right: 2%;
+    bottom: 10%;
+}
+
+.cd-top--is-visible {       /* back-to-top button visible */
+    visibility: visible;
+    opacity: 1;
+}
+
+.cd-top--fade-out {         /* reduce button opacity if user keeps scrolling */
+    opacity: .5;
+}
