@@ -8,6 +8,8 @@
     --primary-color: #ff6e65;
     --secondary-color: #0d369f;
     --text-color: #060606;
+    --dark-color: #161c2d;
+    --header-top-height: 56px;
 }
 
 .content-section h2 span {
@@ -42,16 +44,29 @@
     transform: translateX(-30%);
 }
 
+.dark .content-section h2,
+.dark .content-section p {
+    color: #fff;
+}
+
+.dark .content-section h2::before,
+.dark .content-section h2::after {
+    background-color: #fff;
+}
+
 html {
     font-family: 'Roboto', sans-serif;
     color: #060606;
 }
 
-
+::-webkit-scrollbar {
+    display: none;
+}
 
 /* Header----------------------------------------------------- */
 .header-top {
     background-color: var(--secondary-color);
+    height: var(--header-top-height);
 }
 
 .header-top a:hover {
@@ -65,6 +80,21 @@ html {
 
 .header-navbar .header-navbar--logo:hover {
     color: var(--primary-color);
+}
+
+.header-navbar--mobile-menu {
+    line-height: unset;
+    font-size: unset;
+}
+
+.header-navbar--mobile-menu:focus {
+    box-shadow: none;
+}
+
+.header-navbar--mobile-menu span {
+    background-image: none !important;
+    font-size: 24px;
+    color: var(--secondary-color);
 }
 
 .header-navbar .header-navbar--menu a {
@@ -116,15 +146,75 @@ html {
 }
 
 .header-navbar .header-navbar--search input:focus,
-.header-navbar .header-navbar--search button:focus {
+.header-navbar .header-navbar--search button:focus,
+#switchButton:focus {
     box-shadow: none;
 }
+
+.dark-theme button {
+    font-size: 24px;
+    color: var(--secondary-color);
+}
+
+.dark-theme button:hover {
+    color: var(--primary-color);
+}
+
+.light-c {
+    display: none;
+}
+
+/* ---------------------------------------------------------------- */
+.dark .header-navbar,
+.dark .header-navbar--menu .header-navbar--submenu,
+.dark .header-navbar--submenu a:hover {
+    background-color: var(--dark-color) !important;
+}
+
+.dark .header-navbar .header-navbar--logo,
+.dark .header-navbar--mobile-menu span,
+.dark .header-navbar .header-navbar--menu a,
+.dark .header-navbar .header-navbar--search input,
+.dark .header-navbar .header-navbar--search button {
+    color: #fff !important;
+}
+
+.dark .header-navbar .header-navbar--logo:hover,
+.dark .header-navbar .header-navbar--menu a:hover,
+.dark .header-navbar .header-navbar--search button:hover {
+    color: var(--primary-color) !important;
+}
+
+.dark .header-navbar--mobile-menu {
+    border-color: #fff;
+}
+
+.dark .header-navbar--menu .header-navbar--submenu {
+    box-shadow: rgb(255 255 255 / 10%) 0px 1px 20px 0px;
+}
+
+.dark .header-navbar--search input {
+    background-color: transparent;
+}
+
+.dark .header-navbar--menu .header-navbar--submenu::before {
+    border-bottom-color: var(--dark-color);
+}
+
+.dark .dark-c {
+    display: none;
+}
+
+.dark .light-c {
+    display: block;
+}
+/* ---------------------------------------------------------------- */
 
 
 
 /* Banner----------------------------------------------------- */
 .banner--button-wrap {
-    margin-bottom: 100px;
+    margin-bottom: 66px;
 }
 
 .banner--button {
@@ -169,18 +259,29 @@ html {
 
 .sub-banner {
     position: relative;
-    top: -70px;
+    top: -40px;
     left: 0;
     right: 0;
 }
 
+.sub-banner--item {
+    width: 100%;
+    height: 100%;
+}
+
+.sub-banner--item a:hover {
+    color: var(--text-color) !important;
+}
+
+/* ---------------------------------------------------------------- */
+.dark .banner {
+    background-color: var(--dark-color);
+}
+/* ---------------------------------------------------------------- */
+
 
 
 /* Welcome----------------------------------------------------- */
-.welcome {
-    
-}
-
 .welcome--item i {
     width: 70px;
     height: 70px;
@@ -192,6 +293,21 @@ html {
 .welcome--item a:hover {
     color: var(--primary-color) !important;
 }
+
+/* ---------------------------------------------------------------- */
+.dark .welcome {
+    background-color: var(--dark-color);
+}
+
+.dark .welcome--item a,
+.dark .welcome--item p {
+    color: #fff !important;
+}
+
+.dark .welcome--item a:hover {
+    color: var(--primary-color) !important;
+}
+/* ---------------------------------------------------------------- */
 
 
 
@@ -239,20 +355,70 @@ html {
     background-color: var(--secondary-color);
 }
 
+/* ---------------------------------------------------------------- */
+.dark .course,
+.dark .course-item {
+    background-color: var(--dark-color) !important;
+    border-color: #ffffff33;
+}
+
+.dark .course-item,
+.dark .course-item a,
+.dark .course-item p {
+    color: #fff !important;
+}
+
+.dark .course-item a:hover {
+    color: var(--primary-color) !important;
+}
+
+.dark .course-item--footer {
+    border-color: #ffffff33 !important;
+}
+
+.dark .course-item .course-item--link {
+    color: var(--primary-color) !important;
+}
+
+.dark .course-item .course-item--link:hover {
+    color: var(--secondary-color) !important;
+}
+/* ---------------------------------------------------------------- */
+
 
 
 /* Service----------------------------------------------------- */
 .service {
-    background: url(../img/service-bg.jpg) center / cover no-repeat;
+    background: url(https://github.com/danhdoanbbb/studious/img/service-bg.jpg) center / cover no-repeat;
 }
 
 .service-item i {
-    width: 91px;
+    width: 66px;
     height: 66px;
     line-height: 66px;
     background: #0d369f17;
     color: var(--secondary-color);
 }
+
+/* ---------------------------------------------------------------- */
+.dark .service-item {
+    background-color: var(--dark-color) !important;
+    color: #fff;
+}
+/* ---------------------------------------------------------------- */
+
+
+
+/* Number---------------------------------------------------------- */
+.dark .number {
+    background-color: var(--dark-color) !important;
+}
+
+.dark .number-item {
+    border-color: #ffffff33 !important;
+    color: #fff !important;
+}
+/* ---------------------------------------------------------------- */
 
 
 
@@ -282,6 +448,26 @@ html {
     color: var(--primary-color) !important;
 }
 
+/* ---------------------------------------------------------------- */
+.dark .instructor,
+.dark .instructor-item {
+    background-color: var(--dark-color) !important;
+}
+
+.dark .instructor-item {
+    box-shadow: rgb(255 255 255 / 10%) 0px 1px 20px 0px;
+}
+
+.dark .instructor-item > a,
+.dark .instructor-item > p {
+    color: #fff !important;
+}
+
+.dark .instructor-item > a:hover {
+    color: var(--primary-color) !important;
+}
+/* ---------------------------------------------------------------- */
+
 
 
 /* Contact----------------------------------------------------- */
@@ -297,6 +483,17 @@ html {
     background-color: var(--secondary-color);
 }
 
+/* ---------------------------------------------------------------- */
+.dark .contact {
+    background-color: var(--dark-color) !important;
+}
+
+.dark .contact-content,
+.dark .contact-content p {
+    color: #fff !important;
+}
+/* ---------------------------------------------------------------- */
+
 
 
 /* Footer----------------------------------------------------- */
@@ -305,6 +502,7 @@ footer {
 }
 
 .footer-top {
+    max-width: 1000px;
     box-shadow: 0px -1px 41px 0px rgb(21 22 23 / 8%);
     border-radius: 15px;
     bottom: 0;
@@ -352,9 +550,23 @@ footer {
     color: var(--primary-color) !important;
 }
 
+/* ---------------------------------------------------------------- */
+.dark .footer-top {
+    background-color: var(--dark-color) !important;
+    box-shadow: rgb(255 255 255 / 10%) 0px 1px 20px 0px;
+    color: #fff;
+}
+
+.dark .footer-top--item input {
+    background-color: transparent;
+    border-color: #ffffff33;
+    color: #fff;
+}
+/* ---------------------------------------------------------------- */
 
 
-/* Back to Top */
+
+/* Back to Top----------------------------------------------------- */
 .btn-top {
     width: 40px;
     height: 40px;
@@ -362,6 +574,7 @@ footer {
     background-color: var(--secondary-color);
     right: 2%;
     bottom: 10%;
+    z-index: 100;
 }
 
 .cd-top--is-visible {       /* back-to-top button visible */
@@ -370,5 +583,74 @@ footer {
 }
 
 .cd-top--fade-out {         /* reduce button opacity if user keeps scrolling */
-    opacity: .5;
+    opacity: .3;
 }
+
+
+
+/* Responsive----------------------------------------------------- */
+@media (max-width: 1199.98px) {
+    .banner--content h2 {
+        font-size: 57px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .header-navbar--menu {
+        text-align: center;
+    }
+
+    .header-navbar--menu .header-navbar--submenu {
+        text-align: center;
+        transform: translateX(0);
+        box-shadow: unset;
+    }
+
+    .header-navbar--menu .header-navbar--submenu::before {
+        display: none;
+    }
+
+    .dark-theme {
+        position: absolute;
+        top: 20px;
+        right: 80px;
+    }
+
+    .dark .dark-theme {
+        top: 26px;
+    }
+
+    .banner--content h2 {
+        font-size: 50px;
+    }
+
+    .number-item {
+        border: none !important;
+    }
+
+    .contact-img img {
+        max-width: 100% !important;
+    }
+
+    .footer-body--item {
+        border: none !important;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .banner--content h2 {
+        font-size: 45px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .banner--content h2 {
+        font-size: 36px;
+        padding-left: 20px;
+    }
+
+    .number-item span {
+        font-size: 13px;
+    }
+}
+
