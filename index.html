@@ -52,12 +52,16 @@
                 </div>
             </div>
         </div>
-        <nav class="header-navbar navbar navbar-expand-lg navbar-light bg-white p-3">
+        <nav class="header-navbar navbar navbar-expand-lg navbar-light bg-white p-3 position-fixed">
             <div class="container-fluid">
                 <a class="header-navbar--logo navbar-brand fw-bold" href="#">
                     <img src="https://danhdoanbbb.github.io/studious/img/header-logo.png" alt="" height="48" class="d-inline-block align-text-center">
                     Bootstrap
-                </a>
+                </a>                
+                <button class="dark-theme position-absolute btn" id="switchButton" title="Click to switch theme">
+                    <i class="dark-c far fa-moon"></i>
+                    <i class="light-c far fa-sun"></i>
+                </button>
                 <button class="header-navbar--mobile-menu navbar-toggler p-0" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -65,7 +69,7 @@
                         <i class="fa fa-bars"></i>
                     </span>
                 </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse justify-content-end me-lg-5" id="navbarSupportedContent">
                     <ul class="header-navbar--menu navbar-nav mb-2 mb-lg-0 text-uppercase fw-bold">
                         <li class="nav-item me-2">
                             <a class="nav-link" href="#">Home</a>
@@ -102,12 +106,6 @@
                             <i class="fa fa-search"></i>
                         </button>
                     </form>
-                    <div class="dark-theme ms-2">
-                        <button class="btn" id="switchButton" title="Click to switch theme">
-                            <i class="dark-c far fa-moon"></i>
-                            <i class="light-c far fa-sun"></i>
-                          </button>
-                    </div>
                 </div>
             </div>
         </nav>
@@ -919,12 +917,12 @@
             </div>
         </div>
         <p class="text-secondary text-center py-3 bg-black m-0">
-            @2021 Studious. All rights reserved. Design by Another
+            @2021 Studious. All rights reserved. Design by Someone
         </p>
     </footer>
 
     <!-- Back to Top -->
-    <a href="#" class="btn-top cd-top text-replace js-cd-top d-block text-center text-white rounded-3 position-fixed">
+    <a href="#" class="btn-top cd-top text-replace js-cd-top text-center text-white rounded-3 position-fixed">
         <i class="fa fa-angle-up"></i>
     </a>
 
@@ -950,6 +948,20 @@
         document.getElementById("switchButton").onclick = function () {
             document.getElementById("myBody").classList.toggle("dark");
         };
+    </script>
+    <!-- Hidden header-top & button BacktoTop scroll  -->
+    <script>
+        $(window).on("scroll", function () {
+            var scroll = $(window).scrollTop();
+
+            if (scroll >= 80) {
+                $(".header-navbar").addClass("top-0");
+                $(".btn-top").removeClass("d-none");                
+            } else {
+                $(".header-navbar").removeClass("top-0");
+                $(".btn-top").addClass("d-none");
+            }
+        });
     </script>
 </body>
 
